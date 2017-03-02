@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .container{
+            width:1000px;
+            height:400px;
+            overflow:hidden;
+            position:relative;
+
+        }
+        .container ul{
+            width:2000px;
+            list-style: none;
+            position: absolute;
+
+        }
+        .container ul li {
+            float:left;
+            padding-left: 40px;
+        }
+
+        .container ul li  img{
+            width:200px;
+            height:300px;
+        }
+        .container .hh{
+            width:100px;
+            position:absolute;
+            top:320px;
+            left:500px;
+        }
+        .container .hh span{
+            display: inline-block; width:15px; height:15px; border-radius: 50%; background: grey;
+        }
+        .container .hh span.choose{
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+      <ul id="con">
+
+                  <li><img src="1.jpg"/></li>
+                  <li><img src="2.jpg"/></li>
+                  <li><img src="3.jpg"/></li>
+                  <li><img src="4.jpg"/></li>
+                  <li><img src="5.jpg"/></li>
+                  <li><img src="6.jpg"/></li>
+                  <li><img src="7.jpg"/></li>
+                  <li><img src="8.jpg"/></li>
+
+      </ul>
+      <div class="hh">
+          <span class="choose"></span>
+          <span></span>
+      </div>
+  </div>
+
+<script src="jquery-3.1.1.min.js"></script>
+<script>
+    $(".hh span").hover(function(){
+        var index = $(this).index();
+        $(this).addClass("choose").siblings().removeClass("choose");
+        $("#con").animate({left:-index*960},500)
+    })
+    var current = 0;
+    //自动播放
+    var timer;
+    $(".container").hover(function(){
+        clearInterval(timer);
+    },function(){
+        timer = setInterval(function(){
+            if(current < $(".hh span").length -1){
+                current++
+            }else current = 0;
+            $(".hh span").eq(current).addClass("choose").siblings().removeClass("choose");
+            $("#con").animate({left:-1000 * current},500)
+        },1000)
+    }).trigger("mouseleave");
+</script>
+</body>
+</html>

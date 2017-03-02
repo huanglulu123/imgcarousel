@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        .container{
+            width:1000px;
+            height:400px;
+            margin:0 auto;
+            overflow:hidden;
+        }
+        .container ul li{
+            float:left;
+            list-style: none;
+            width:100px;
+            overflow: hidden;
+            heigh:400px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+<ul>
+    <li class="select"><img src="5.png"/></li>
+    <li><img src="2.png"/></li>
+    <li><img src="33.jpg"/></li>
+    <li ><img src="22.jpg"/></li>
+</ul>
+</div>
+<script type="text/javascript" src="jquery-3.1.1.min.js" ></script>
+<script>
+//    $(".container ul li").hover(function() {
+//        var index = $(this).index();
+//        $(this).animate({width: 700}, 500).siblings().stop().animate({width: 100}, 500);
+//    },function(){
+//        $('.container ul li').each(function(){
+//            if(($this).hasClass('select')){
+//                $(this).stop().animate({width: 700}, 500).siblings().stop().animate({width: 100}, 500);
+//            }
+//        })
+//    })
+   $(function(){
+       $("ul li").mouseover(function(){
+           $(this).stop().animate({width:538},500);
+           $(this).siblings().stop().animate({width:100},500);
+       })
+   })
+</script>
+</body>
+</html>

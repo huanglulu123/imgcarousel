@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery学习</title>
+    <style>
+        .button{ background: bisque;}
+        #btn2{ position: fixed; right: 0; bottom: 0; display: none}
+    </style>
+</head>
+<body>
+全选:<input type="checkbox" value="全选" id="all" name="all"/><label for="all"></label>
+歌曲:<input type="checkbox"  id="one" name="song"/><label for="one">seve</label>
+<input type="checkbox"  id="two" name="song"/><label for="two">菊花台</label>
+<input type="checkbox"  id="three" name="song"/><label for="three">青花瓷</label>
+<input type="checkbox"  id=four" name="song"/><label for="four">百合花</label>
+
+
+<input type="text"/>
+<div id="div1"></div>
+<input type="radio" value="男" name="1"/>男
+<input type="radio" value="女" name="1"/>女
+<div class="div3"></div>
+<button id="btn">点击我</button>
+<div class="div1">
+    <p class="disappear">我就消失啦啦啦啦啦啦了</p>
+</div>
+<div class="div2">
+    <p class="disappear">我就消失啦啦啦啦啦啦了</p>
+</div>
+
+<ul class="left">
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+<p id="fade">淡入淡出</p>
+<span class="btn">点击</span>
+
+<button id="btn2">回到顶部</button>
+
+<p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p>
+<p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p>
+<p class="scroll">呵呵哈哈哈或</p>
+<p class="scroll">呵呵哈哈哈或</p>
+<p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p>
+<p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p>
+<p class="scroll">呵呵哈哈哈或</p>
+<p class="scroll">呵呵哈哈哈或</p>
+<p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p>
+<p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p><p class="scroll">呵呵哈哈哈或</p>
+<p class="scroll">呵呵哈哈哈或</p>
+<p class="scroll">呵呵哈哈哈或</p>
+<script src="jquery-3.1.1.min.js"></script>
+<script>
+    $('#btn').click(function(){
+        //$('.disappear').toggle();
+        //$('ul li:odd').css({"background":"pink","color":"white"});//odd 下标奇数
+        //$('ul li:even').css({"background":"pink","color":"white"});//even 下标偶数
+        $('.div1').slideToggle();
+    });
+
+    $('.btn').click(function(){
+        $(this).toggleClass('button');  //原来有就删除，没有就添加
+        $('#fade').fadeToggle(1000);//淡入淡出
+    })
+    //$('#fade').fadeOut(3000);
+
+    //$('.left li').eq(2).addClass('button');//eq
+    $('.left li').click(function(){
+        var index=$(this).index();  //获取索引值
+        console.log(index);
+        $(this).addClass('button').siblings().removeClass('button');
+    })
+    $("input[type='text']").keyup(function(){
+        var str=$(this).val();
+        $('.div1').text(str);
+    })
+    $("input[type='radio']").click(function(){
+        var str=$(this).val();
+        $('.div3').text(str);
+    })
+
+    $("input[name='all']").change(function(){
+        if($(this).prop('checked')){
+            console.log(111);
+            $('input[name="song"]').prop('checked',true);
+        }else{
+            console.log(222);
+            $('input[name="song"]').prop('checked',false);
+        }
+    })
+
+    //获取window对象 ,并监听滚动事件
+    $(window).scroll(function(){
+        console.log('gundongba');
+        //判断网页卷进去的高度，是否大于屏幕的高度  $(document).scrollTop()>$(window).height()
+        if($(document).scrollTop()>$(window).height()){
+            $('#btn2').show();
+        }else{
+            $('#btn2').hide();
+        }
+        //如果大于则让返回顶部按钮显示  否则按钮隐藏
+    })
+    //点击返回顶部按钮执行函数
+    $('#btn2').click(function(){
+        //让网页回到顶部，animate({scrollTop:0},200)
+        $('body').animate({scrollTop:0},200);
+    })
+</script>
+</body>
+</html>
